@@ -58,6 +58,7 @@ module Klarna
 
       def  update_order(order)
         request_body = order.to_json
+        # binding.pry
         response = https_connection.post do |req|
           req.url '/checkout/orders/' + order.id
 
@@ -69,8 +70,8 @@ module Klarna
           req.body = request_body
         end
         handle_status_code(response.status)
-
-        order.id = response.headers['Location'].split('/').last
+        # binding.pry
+        # order.id = response.headers['Location'].split('/').last
         order
       end
 
