@@ -23,7 +23,8 @@ module Klarna
           :purchase_currency  => @purchase_currency,
           :locale             => @locale,
           :cart     => @cart.as_json,
-          :merchant => @merchant.as_json 
+          :merchant => @merchant.as_json,
+          :gui => @gui.as_json
         })
       end
     end
